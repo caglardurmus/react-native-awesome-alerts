@@ -10,6 +10,7 @@ import {
   BackHandler,
   Modal,
   Platform,
+  Keyboard
 } from 'react-native';
 
 import PropTypes from 'prop-types';
@@ -84,6 +85,7 @@ export default class AwesomeAlert extends Component {
   };
 
   _onTapOutside = () => {
+    Keyboard.dismiss();
     const { closeOnTouchOutside } = this.props;
     if (closeOnTouchOutside) this._springHide();
   };
